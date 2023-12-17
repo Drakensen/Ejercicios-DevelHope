@@ -1,0 +1,61 @@
+* {
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
+}
+
+html {
+    padding: 0;
+  }
+
+h1, #dropdown, .dis {
+    display: inline
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: rgba(33,37,41,255);
+    border-bottom-color: white;
+}
+
+h1, .home{
+    color: white;
+}
+
+select {
+    border: 0;
+}
+
+#dropdown, .link {
+    color: grey;
+}
+
+#dropdown {
+    background-color: transparent;
+}
+
+.dis {
+    color: rgb(77, 75, 75);
+    padding-right: 90px;
+}
+
+button {
+    border: rgba(25,135,84,255) 1px solid; border-radius: 5px;
+    color: rgba(25,135,84,255);
+    background-color: rgba(33,37,41,255);
+}
+
