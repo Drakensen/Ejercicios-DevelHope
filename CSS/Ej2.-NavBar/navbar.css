@@ -59,3 +59,7 @@ button {
     background-color: rgba(33,37,41,255);
 }
 
+button:hover {
+    background-color: green;
+    color: white;
+}
