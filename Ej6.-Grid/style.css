@@ -1,0 +1,144 @@
+body {
+    margin: 20px;
+    margin-top:10%;
+    display: flex;
+    justify-content: center;
+}
+
+.calculadora {
+    display: grid;
+    font-size: 30px;
+    border: 2px solid;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+.calculadora > div:not(.pantalla) {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    border: 2px solid grey;
+    margin: -1px;
+}
+
+.pantalla {
+    background-color: rgba(66,76,82,255);
+    color: white;
+    grid-column: 1 / 5;
+    grid-row: 1;
+    display: grid;
+    text-align: end;
+    align-items: center;
+    border: 1px solid black;
+    margin: -1px;
+    font-weight: bold;
+    padding-right: 10px;
+}
+
+div {
+    font-weight: bold;
+}
+
+.bsum, .bres, .bmul, .bdiv {
+    background-color: rgba(210,220,227,255);
+}
+
+.bsum {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.bres {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.bmul {
+    grid-column: 3;
+    grid-row: 2;
+}
+.bdiv {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+.b7 {
+    grid-column: 1;
+    grid-row: 3;
+    background-color: rgba(239,242,245,255);
+}
+
+.b8 {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: rgba(239,242,245,255);
+}
+
+.b9 {
+    grid-column: 3;
+    grid-row: 3;
+    background-color: rgba(239,242,245,255);
+}
+
+.b4 {
+    grid-column: 1;
+    grid-row: 4;
+    background-color: rgba(239,242,245,255);
+}
+
+.b5 {
+    grid-column: 2;
+    grid-row: 4;
+    background-color: rgba(239,242,245,255);
+}
+
+.b6 {
+    grid-column: 3;
+    grid-row: 4;
+    background-color: rgba(239,242,245,255);
+}
+
+.b1 {
+    grid-column: 1;
+    grid-row: 5;
+    background-color: rgba(239,242,245,255);
+}
+
+.b2 {
+    grid-column: 2;
+    grid-row: 5;
+    background-color: rgba(239,242,245,255);
+}
+
+.b3 {
+    grid-column: 3;
+    grid-row: 5;
+    background-color: rgba(239,242,245,255);
+}
+
+.b0 {
+    grid-column: 1;
+    grid-row: 6;
+    background-color: rgba(239,242,245,255);
+}
+
+.bdec {
+    grid-column: 2;
+    grid-row: 6;
+    background-color: rgba(239,242,245,255);
+}
+
+.bAC {
+    grid-column: 3;
+    grid-row: 6;
+    background-color: rgba(239,242,245,255);
+}
+
+.bigu {
+    grid-column: 4;
+    grid-row: 3 / span 4;
+    background-color: rgba(247,112,119,255);
+}
