@@ -67,14 +67,18 @@ button:hover {
 /* AQUÍ COMIENZA EJERCICIO 9: Make responsive the exercise 'Nav': below 768 pixels the navbar is replaced by an hamburger menu without functionalities, 
 it just appears. Try to create the hamburger menu both with CSS rules and using an icon. */ 
 
-@media (min-width: 769px) {
-    h1 {
+@media (min-width: 768px) {
+    svg {
         display: none;
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     h1, .home, .link, #dropdown, .dis, #search, button {
         display: none;
+    }
+    
+    svg {
+        display: unset;
     }
 }
