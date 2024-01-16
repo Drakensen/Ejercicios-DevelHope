@@ -1,3 +1,136 @@
 /* Try to replicate the layout displayed in asset/cards-desktop.jpg, cards-mobile.jpg (max-width: 375px), 
 cards-tablet.jpg (max-width: 768px). The created page should be responsive, both for the tablet view &#40;max-width: 768px&#41 
 and mobile view &#40;max-width: 375px&#41 */
+
+body {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+.totalBlock {
+    display: flex;
+    gap: 30px;
+}
+
+.block {
+    background: linear-gradient(to bottom, rgba(178,178,178,255) 0%, rgba(227,227,227,255) 100%);
+    width: 320px;
+    border: 0px solid;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 470px;
+    box-shadow: 0px 5px 5px 0px rgba(198,198,198,255);
+}   
+
+.div1 {
+    display: inline-flex;
+}
+
+.div1One {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 10px;
+    margin-right: 120px;
+    margin-left: 5px;
+}
+
+.div1Two {
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    margin: 10px;
+    margin-right: 100px;
+    margin-left: 5px;
+}
+
+.pDot {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.headerJump {
+    padding: 0;
+}
+
+.p1 {
+    color: rgba(47,47,47,255);
+    font-size: 20px;
+    margin-bottom: 0px;
+}
+
+.p2 {
+    color: rgba (231,231,231,255);
+    font-size: 15px;
+    margin-top: 0px;
+}
+
+.div .p3 {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+img {
+    width: 325px;
+    height: 250px;
+}
+
+.div1 {
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+}
+
+p {
+    margin: 5px;
+}
+
+.icons {
+    display: inline-flex;
+    align-items: center;
+    color: rgba(123,131,138,255);
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 20px;
+}
+
+.correction {
+    margin-left: 15px;
+}
+
+.bodyText {
+    margin-left: 10px;
+    color: rgba(114, 114, 114, 255);
+}
+
+b {
+    color: rgba(30, 30, 30, 255);
+}
+
+@media (max-width:768px) {
+    .totalBlock {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media (max-width: 365px) {
+    .totalBlock {
+        display: flex;
+        flex-direction: column;
+    }
+}
