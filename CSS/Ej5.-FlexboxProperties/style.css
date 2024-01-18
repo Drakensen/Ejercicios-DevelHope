@@ -1,13 +1,11 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-size: 120%;
 }
 
 .groupColor {
     display: flex;
-    height: 100vh;
-    gap: 100px;
+    gap: 50px;
 }
 
 #green {
@@ -25,7 +23,7 @@
 }
 
 #red p {
-    margin-right: 250px;
+    margin-right: 120px;
     margin-bottom: 30px;
 }
 
@@ -34,7 +32,7 @@
 }
 
 #orange p {
-    margin-left: 150px;
+    margin-left: 80px;
 }
 
 #yellow {
@@ -55,8 +53,8 @@ div section {
     display: flex;
     background-color: white;
     margin: 30px 0px;
-    width: 270px;
-    height: 300px;
+    width: 90px;
+    height: 90px;
 }
 
 li {
@@ -78,7 +76,7 @@ li {
 }
 
 #blue p {
-    margin-right: 200px;
+    margin-right: 90px;
 }
 
 #green, #blue {
@@ -87,5 +85,5 @@ li {
 }
 
 p {
-    font-size: 100px;
+    font-size: 16px;
 }
