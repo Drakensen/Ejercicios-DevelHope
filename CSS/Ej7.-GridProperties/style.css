@@ -1,13 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: grid;
     height: 100vh;
-    width: 100%;
 }
 
 div {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 25% 50%;
     gap: 50px 50px;
 }
 
@@ -46,6 +48,7 @@ div {
 
 p {
     padding-left: 40px;
+    padding-right: 350px;
     padding-top: 20px;
     font-size: 40px;
 }
@@ -63,11 +66,27 @@ ul {
 li {
     display: flex;
     background-color: white;
-    width: 150px;
-    height: 100px;
+    width: 100px;
+    height: 80px;
     justify-content: start;
     align-items: center;
     margin-bottom: 50px;
-    font-size: 25px;
-    padding-left: 20px;
+    font-size: 20px;
+    padding-left: 60px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.pyellow, .pred, .pblue, .porange {
+    margin-top: 50px;
+}
+
+.pred {
+    margin-left: 40px;
+}
+
+.pyellow {
+    margin-left: 35px;
 }
