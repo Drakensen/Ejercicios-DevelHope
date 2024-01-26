@@ -1,8 +1,10 @@
 /*Create the function nicknameMap using the for loop, which takes in an array of people and returns a nicknames array. 
-The nickname must be composed as follows: <name>-<age></age>*/
+The nickname must be composed as follows: <name>-<age>*/
 
 function nicknameMap(persons) {
-
+    for (i=0; i<=persons; i++) {
+        return name + age;
+    }
 }
 
 const persons = [
