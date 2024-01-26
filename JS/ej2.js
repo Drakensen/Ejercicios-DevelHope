@@ -2,9 +2,11 @@
 The nickname must be composed as follows: <name>-<age>*/
 
 function nicknameMap(persons) {
-    for (i=0; i<=persons; i++) {
-        return name + age;
-    }
+    const nickName = [];
+    persons.forEach(element => {
+      nickName.push(element.name + "-" + element.age)
+    });
+    return nickName;
 }
 
 const persons = [
