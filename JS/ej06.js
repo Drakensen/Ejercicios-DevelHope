@@ -8,7 +8,7 @@ function printName () {  //Crea una Función.
     function inner() { //Aquí creas una segunda función dentro de la primera función.
         console.log(helloName);
     }
-    return inner; //Aquí llamas a la segunda función.
+return inner; //Aquí llamas a la segunda función.
 }
 
 printName()(); //Aquí muestra por pantalla a la primera función (que realmente está dando la segunda, que es la única que hace algo funcional).

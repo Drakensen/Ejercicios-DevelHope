@@ -2,9 +2,9 @@
 create a function called inner. This function will take care of multiplying the parameter passed as input and multiply it by the variable 
 named number Print in the console the function output. Example: multiplyByTwo(4)(), result: 8 */
 
-function multiplyByTwo (inner) {
+function multiplyByTwo () {
     let x = inner*2
-    console.log(x)
+    return x;
 }
 
-multiplyByTwo(4);
+multiplyByTwo(4)();
