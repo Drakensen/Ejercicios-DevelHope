@@ -3,12 +3,12 @@ The repeatHello function will have to execute the callback function with an inte
 
 function repeatHello (callback) { //Llama a una función.
     setInterval (()=> { //Ejecuta por intervalo.
-            callback();
+        callback();
     }, 1000)
 }
 
-function helloWorld() { //Se crea una función aparte.
+function sayHello() { //Se crea una función aparte.
     console.log("Hello")
 }
 
-repeatHello(helloWorld); //Ejecuta función y el parámetro que espera es helloWorld.
+repeatHello(sayHello); //Ejecuta función y el parámetro que espera es sayHello.
