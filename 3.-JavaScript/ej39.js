@@ -35,5 +35,5 @@ myPromise(isLogged)
   })
   
   .finally(() => {
-    console.log("Proceso finalizado.");
+    console.log("Proceso finalizado."); //Se agrega esto al ejercicio, que se ejecutará siempre, tanto si la promesa se resuelve como si se rechaza.
   });
