@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 42 JS</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+/* In the exercise.js file, we find a user object. Write a function that saves the user object in localStorage with its 'user' key. */
+
+const user = {
+  id: 1,
+  name: "John",
+  age: 25,
+};
+
+function saveUser () {
+    localStorage.setItem('user', JSON.stringify(user)); //Convierte el objeto 'user' en una cadena JSON y guarda el objeto en el Local Storage.
+    console.log("Usuario guardado en localStorage exitosamente");
+}
+
+saveUser(user);
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    /* Starting from the previous exercise, write a method that recovers the data saved in localStorage and prints them in the console. */
+
+    const user = {
+  id: 1,
+  name: "John",
+  age: 25,
+};
+
+function saveUser () {
+    localStorage.setItem('user', JSON.stringify(user)); //Convierte el objeto 'user' en una cadena JSON y guarda el objeto en el Local Storage.
+    console.log("Usuario guardado en localStorage exitosamente");
+}
+
+function findUser () {
+    let resultado = localStorage.getItem('user');
+    
+}
+
+saveUser(user);
+</script>
