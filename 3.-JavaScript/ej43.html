@@ -26,8 +26,9 @@ function saveUser () {
 
 function findUser () {
     let resultado = localStorage.getItem('user');
-    
+    console.log(resultado, JSON.parse(resultado));    
 }
 
-saveUser(user);
+saveUser();
+findUser();
 </script>

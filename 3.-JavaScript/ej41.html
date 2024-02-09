@@ -11,7 +11,7 @@
           <input type="checkbox" id="todo-completed" />
         </div>
 
-        <button type="submit" id="submit-todo"></button>
+        <button type="submit" id="submit-todo">Submit</button>
       </form>
     </div>
   </body>
@@ -46,8 +46,8 @@ The post data must be transmitted following the compilation of a form. */
 async function main() { //En la función main, creamos un objeto postData que contiene la información de la nueva publicación y luego llamamos a createNewPost para crear la publicación. 
     try {
         const postData = {
-            title: "Mi nueva publicación",
-            completed: false
+            title: "",
+            completed: true
         };
         const newPost = await createNewPost(postData); //Finalmente, imprimimos la nueva publicación o manejamos cualquier error que pueda ocurrir durante la ejecución.
         console.log("Nueva publicación creada", newPost);
@@ -55,6 +55,8 @@ async function main() { //En la función main, creamos un objeto postData que co
         console.error("Error en la ejecución principal: ", error.message); 
     }
 }
+
+EventSource
 
 main();
 </script>
