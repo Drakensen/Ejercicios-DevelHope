@@ -48,8 +48,8 @@ async function createNewPost(postData) {
 async function main() {
   try {
     const postData = {
-      title: 'Mi nueva publicación',
-      completed: false
+      title: inputTexto.value,
+      completed: inputChecked.checked
     };
 
     const newPost = await createNewPost(postData);
@@ -59,4 +59,16 @@ async function main() {
   }
 }
 
+let inputTexto = document.getElementById("todo-title")
+let inputChecked = document.getElementById("todo-completed")
+
+inputChecked.addEventListener('change', function() {
+  if (this.checked) {
+    console.log("True");
+  } else {
+    console.log("False");
+  }
+});
+
 main();
+</script>
