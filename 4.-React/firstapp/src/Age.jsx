@@ -1,4 +1,4 @@
-function Age ({ age="undefined" }) {
+function Age ({ age= 31 }) {
     if (age >= 18) {
     return (
         <p>Your age is { age }</p>

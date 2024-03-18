@@ -1,26 +1,23 @@
-import { HelloWorld } from "./HelloWorld";
-import { MessageWBD } from "./MessageWBD";
 import Welcome from "./Welcome";
 import { Counter } from "./Counter";
-import AlertClock from "./AlertClock";
-import { Clock } from "./Clock";
+import { Clock } from  "./Clock"
 import { MouseClicker } from "./MouseClicker";
+import InteractiveWelcome from "./InteractiveWelcome";
 
 function App() {
-    return (<div>
-        <HelloWorld />
-
-        <MessageWBD />
-
+    return (
+    <>
         <Welcome name="Pablo" age="31"/>
-        <Welcome />
+
+        <InteractiveWelcome />
 
         <Counter decrementValue={1} resetValue={0}/>
 
         <Clock />
 
         <MouseClicker />
-    </div>)
+    </>
+    )
 }
 
 export default App

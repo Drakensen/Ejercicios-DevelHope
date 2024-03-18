@@ -1,12 +1,14 @@
 export function MouseClicker() {
+    function handleImageClick(event) {
+        console.log(event.target.src)
+        event.stopPropagation()
+    }
+
     function handleButtonClick(event) {
-        console.log(event.currentTarget.name)
+        console.log(event.target.name)
     }
 
     return (
-        <>
-        <button name="One" onClick={handleButtonClick}>Button 1</button>
-        <button name="Two" onClick={handleButtonClick}>Button 2</button>
-        </>
+        <button name="Logo React" onClick={handleButtonClick}><img onClick= {handleImageClick} src="reacticon.png"/></button>
     )
 }
