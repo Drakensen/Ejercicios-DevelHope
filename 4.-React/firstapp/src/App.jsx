@@ -1,8 +1,9 @@
 import Welcome from "./Welcome";
 import { Counter } from "./Counter";
 import { Clock } from  "./Clock"
-import { MouseClicker } from "./MouseClicker";
 import InteractiveWelcome from "./InteractiveWelcome";
+import Login from './Login';
+import UncontrolledLogin from "./UncontrolledLogin";
 
 function App() {
     return (
@@ -15,7 +16,7 @@ function App() {
 
         <Clock />
 
-        <MouseClicker />
+        <UncontrolledLogin />
     </>
     )
 }
