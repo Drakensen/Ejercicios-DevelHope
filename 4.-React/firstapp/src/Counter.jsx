@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function Counter({decrementValue, resetValue}) {
     const [counter, setCounter] = useState(0);
+
+
+    useEffect(() => {
+        console.log("I have been mounted");
+    }, [])
+    
+    useEffect(() => {
+        console.log(`The value of the counter is ${counter}`);
+    }, [counter])
+
     function  increment() {
         setCounter(prevCounter => prevCounter + 1)
     }
