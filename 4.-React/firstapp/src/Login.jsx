@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function Login () {
     const [data, setData] = useState({
@@ -6,6 +6,19 @@ export function Login () {
         password: "",
         section: false,
     })
+
+    const mountedRef = useRef(false)
+    const inputRef = useRef(null)
+
+    useEffect(() => {
+        if(!mountedRef.current) {
+            mountedRef.current = true
+            console.log("Mounting for the first time")
+        } else {
+            console.log("Mounting again for debug puroposes")
+        }
+        inputRef.current?.focus()
+    }, [])
 
     function handleInputChange(event) {
         const name= event.target.name

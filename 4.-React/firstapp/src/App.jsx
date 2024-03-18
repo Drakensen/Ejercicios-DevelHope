@@ -4,6 +4,8 @@ import { Clock } from  "./Clock"
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from './Login';
 import UncontrolledLogin from "./UncontrolledLogin";
+import ColourList from "./ColourList";
+
 
 function App() {
     return (
@@ -12,11 +14,19 @@ function App() {
 
         <InteractiveWelcome />
 
-        <Counter decrementValue={1} resetValue={0}/>
+        <Counter initialValue={0} />
 
         <Clock />
-
-        <UncontrolledLogin />
+        
+        <Login />
+        
+        <ColourList
+        colour={[
+            {id: 1, name: "Red"},
+            {id: 2, name: "Green"},
+            {id: 3, name: "Blue"},
+        ]}
+        />
     </>
     )
 }

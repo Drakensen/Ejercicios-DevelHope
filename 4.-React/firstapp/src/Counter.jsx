@@ -1,25 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react"
 
-export function Counter({decrementValue, resetValue}) {
-    const [counter, setCounter] = useState(0);
-
+export function Counter({initialValue}) {
+    const [counter, setCounter] = useState(initialValue);
+    const directionRef = useRef("initial")
 
     useEffect(() => {
-        console.log("I have been mounted");
-    }, [])
-    
-    useEffect(() => {
-        console.log(`The value of the counter is ${counter}`);
-    }, [counter])
+        if (counter > initialValue) {
+            directionRef.current = console.log("up")
+        } 
+        else if (counter < initialValue) {
+            directionRef.current = console.log("down")
+        }
+        else if (directionRef.current !== "initial") {
+        console.log("Reset");
+        }
+    }, [counter, initialValue])
 
     function  increment() {
-        setCounter(prevCounter => prevCounter + 1)
+        setCounter(initialValue => initialValue + 1)
     }
     function decrement() {
-        setCounter(prevCounter => prevCounter - decrementValue)
+        setCounter(initialValue => initialValue - 1)
     }
     function reset() {
-        setCounter(resetValue)
+        setCounter(initialValue)
     }
 
     return (
