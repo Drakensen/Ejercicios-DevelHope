@@ -30,7 +30,7 @@ export function Counter({initialValue}) {
 
     return (
     <>  
-        <h2> {counter} </h2>
+        <h2 className="counter"> {counter} </h2>
         <button onClick={increment}>+</button>
         <button onClick={reset}>Reset</button>
         <button onClick={decrement}>-</button>

@@ -1,7 +1,13 @@
-const ColourList = [
-    {name: 'Red', id: 1},
-    {name: 'Green', id: 2},
-    {name: 'Blue', id: 3}
-];
+import React from 'react';
+import Colours from './Colours';
+import Colour from './Colour'
 
-export default ColourList
+const ColourList = ({ colours }) => (
+    <ul>
+        {colours.map(colour => (
+            <Colour key={colour.id} colour={colour} />
+    ))}
+    </ul>
+);
+
+export default ColourList;

@@ -4,7 +4,8 @@ import { Clock } from  "./Clock"
 import InteractiveWelcome from "./InteractiveWelcome";
 import Login from './Login';
 import UncontrolledLogin from "./UncontrolledLogin";
-import ColourList from "./ColourList";
+import Colours from "./Colours";
+import ColourList from "./ColourList"
 import TodoList  from "./TodoList";
 
 

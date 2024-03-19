@@ -10,6 +10,6 @@ export function Clock() {
     }, [])
 
     return (
-        <h2>Current Time: {date.toLocaleTimeString()}</h2>
+        <h2 className="clock">Current Time: {date.toLocaleTimeString()}</h2>
     )
 }

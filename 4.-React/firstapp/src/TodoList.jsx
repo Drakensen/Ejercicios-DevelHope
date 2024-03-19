@@ -17,20 +17,19 @@ function handleRemoveTodo(index) {
 return (
     <div>
     <form onSubmit={handleAddTodo}>
-        <input name="todo" />
+        <input name="todo" className="new-todo" />
         <button type="submit">Add</button>
+        <button onClick={() => setTodos([])}>Reset</button>
     </form>
 
     <ul>
         {todos.map((todo, index) => (
-        <li key={index}>
+        <li className="litodo" key={index}>
             {todo}
             <button onClick={() => handleRemoveTodo(index)}>Remove</button>
         </li>
         ))}
     </ul>
-
-    <button onClick={() => setTodos([])}>Reset</button>
     </div>
 );
 }
