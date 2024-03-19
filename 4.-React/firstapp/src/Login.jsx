@@ -10,16 +10,6 @@ export function Login () {
     const mountedRef = useRef(false)
     const inputRef = useRef(null)
 
-    useEffect(() => {
-        if(!mountedRef.current) {
-            mountedRef.current = true
-            console.log("Mounting for the first time")
-        } else {
-            console.log("Mounting again for debug puroposes")
-        }
-        inputRef.current?.focus()
-    }, [])
-
     function handleInputChange(event) {
         const name= event.target.name
         const value= event.target.value
@@ -45,7 +35,7 @@ export function Login () {
             <input type="password" name="password" value={data.password} onChange={handleInputChange}/>
             <input type="checkbox" name="section" checked= {data.section} onChange={handleInputChange} />Remember me 
             <button disabled={!data.username || !data.password}>Login</button>
-            <button onClick={() => setData({ username: '', password: '', section: false })}>Reset</button>;
+            <button onClick={() => setData({ username: '', password: '', section: false })}>Reset</button>
         </form>
     )
 }

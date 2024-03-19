@@ -8,6 +8,7 @@ import Colours from "./Colours";
 import ColourList from "./ColourList"
 import TodoList  from "./TodoList";
 import { Container } from "./Container";
+import LanguageSelector  from "./LanguageSelector";
 
 
 export function App() {
@@ -19,14 +20,18 @@ export function App() {
 
         <Counter initialValue={0} />
 
-        <Clock />
+        <div className="timelocal">
+            <LanguageSelector>
+            <Clock />
+            </LanguageSelector>
+        </div>
         
         <Login />
         
         <TodoList />
 
         <Container title="Hello, Click here">
-            <h3>BYE</h3>
+            <p>BYE</p>
         </Container>
     </div>
     )
