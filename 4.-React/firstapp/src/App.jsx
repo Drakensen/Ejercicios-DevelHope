@@ -7,6 +7,7 @@ import UncontrolledLogin from "./UncontrolledLogin";
 import Colours from "./Colours";
 import ColourList from "./ColourList"
 import TodoList  from "./TodoList";
+import { Container } from "./Container";
 
 
 export function App() {
@@ -23,6 +24,10 @@ export function App() {
         <Login />
         
         <TodoList />
+
+        <Container title="Hello, Click here">
+            <h3>BYE</h3>
+        </Container>
     </div>
     )
 }

@@ -1,6 +1,7 @@
 .app {
     background-color: rgb(201, 230, 255);
     border: solid 3px yellow;
+    width: 400px;
     margin: 20px;
     padding: 20px;
 }
@@ -33,4 +34,10 @@ button {
 
 .litodo {
     color: violet;
+}
+
+.container {
+    border: 1px red solid;
+    background-color: white;
+    text-align: center;
 }
