@@ -6,4 +6,15 @@ export function ColourList ({colour}) {
         </li>
     )
 }
+
+export function ColourList2 ({colours}) {
+    return (
+        <ul>
+            {colours.map ((colours) => (
+                <ColourList key={colours.name} colours={colours} />
+            ))}
+        </ul>
+    )
+}
+
 export default ColourList
