@@ -1,0 +1,12 @@
+.app {
+    background-color: rgb(201, 230, 255);
+    border: solid 3px yellow;
+    margin: 20px;
+    padding: 20px;
+}
+
+.welcome {
+    background-color: rgb(203, 250, 203);
+    border-radius: 20px;
+    border: 2px solid rgb(165, 165, 165);
+}

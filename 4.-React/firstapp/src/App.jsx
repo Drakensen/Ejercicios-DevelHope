@@ -5,11 +5,12 @@ import InteractiveWelcome from "./InteractiveWelcome";
 import Login from './Login';
 import UncontrolledLogin from "./UncontrolledLogin";
 import ColourList from "./ColourList";
+import TodoList  from "./TodoList";
 
 
-function App() {
+export function App() {
     return (
-    <>
+    <div className="app">
         <Welcome name="Pablo" age="31"/>
 
         <InteractiveWelcome />
@@ -20,13 +21,8 @@ function App() {
         
         <Login />
         
-        <ColourList colour={[
-            {id: 1, name: "Red"},
-            {id: 2, name: "Green"},
-            {id: 3, name: "Blue"},
-        ]}
-        />
-    </>
+        <TodoList />
+    </div>
     )
 }
 
