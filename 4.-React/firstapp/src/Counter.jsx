@@ -2,25 +2,18 @@ import { useEffect, useState, useRef } from "react";
 
 export function Counter({ initialValue }) {
     const [counter, setCounter] = useState(initialValue);
-    const [firstIncrement, setFirstIncrement] = useState(true);
-    const [firstDecrement, setFirstDecrement] = useState(true);
     const directionRef = useRef("initial");
     const prevValueRef = useRef(initialValue);
 
     useEffect(() => {
-    if (counter > prevValueRef.current && firstIncrement) {
-        console.log("up");
-        setFirstIncrement(false);
-    } else if (counter < prevValueRef.current && firstDecrement) {
-        console.log("down");
-        setFirstDecrement(false);
-    }
-    if (counter > prevValueRef.current) {
-        directionRef.current = "up";
-    } else if (counter < prevValueRef.current) {
-        directionRef.current = "down";
-    }
-    
+        if (counter > initialValue && directionRef.current != "up") {
+            directionRef.current = "up"; 
+            console.log(directionRef.current)
+        } if (counter < initialValue && directionRef.current != "down") {
+            directionRef.current = "down";
+            console.log(directionRef.current)
+        }
+
     prevValueRef.current = counter;
     }, [counter, initialValue]);
 
@@ -34,8 +27,6 @@ export function Counter({ initialValue }) {
 
     function reset() {
     setCounter(initialValue);
-    setFirstIncrement(true);
-    setFirstDecrement(true);
     console.log("Reset")
     }
 
