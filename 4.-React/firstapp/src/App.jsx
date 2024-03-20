@@ -20,12 +20,12 @@ export function App() {
 
         <Counter initialValue={0} />
 
-        <div className="timelocal">
+        <div className="timediv">
             <LanguageSelector>
             <Clock />
             </LanguageSelector>
         </div>
-        
+
         <Login />
         
         <TodoList />

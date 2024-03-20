@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext, createContext } from "react";
 
-export const LanguageContext = createContext("esp");
+export const LanguageContext = createContext("es");
 
 export function Clock() {
     const { language } = useContext(LanguageContext);
@@ -14,23 +14,29 @@ export function Clock() {
 
     return (
     <h2 className="clock">
-        {language === "esp" ? "Hora Actual:" : "Current Time:"} {date.toLocaleTimeString()}
+        {language === "es" ? "Hora Actual:" : "Current Time:"} {date.toLocaleTimeString(language === "es" ? 'es-ES' : undefined)}
     </h2>
     );
 }
 
 function LanguageSelector({ children }) {
-    const [language, setLanguage] = useState("eng");
+    const [language, setLanguage] = useState("en");
 
     return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
         <select className="sel-lang" value={language} onChange={(e) => setLanguage(e.target.value)}>
-            <option value="eng">English</option>
-            <option value="esp">Español</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
         </select>
         {children}
     </LanguageContext.Provider>
     );
 }
 
-export default LanguageSelector
+export default function App() {
+    return (
+    <LanguageSelector>
+        <Clock />
+    </LanguageSelector>
+    );
+}
