@@ -10,6 +10,8 @@
     background-color: rgb(203, 250, 203);
     border-radius: 20px;
     border: 2px solid rgb(165, 165, 165);
+    width: 300px;
+    margin: auto;
 }
 
 button {
@@ -34,8 +36,18 @@ button:disabled {
     border: dotted 3px;
 }
 
+.counterzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2rem;
+    margin-bottom: -2rem;
+}
+
 .counter {
     color: red;
+    font-size: 30px;
+    margin-right: 5rem;
 }
 
 .new-todo {
@@ -70,4 +82,20 @@ button:disabled {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.gitusersearch {
+    margin-top: 1rem;
+}
+
+.githubuser img {
+    width: 150px;
+}
+
+.githubuser {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

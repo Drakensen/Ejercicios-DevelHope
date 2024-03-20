@@ -9,30 +9,31 @@ import ColourList from "./ColourList"
 import TodoList  from "./TodoList";
 import { Container } from "./Container";
 import LanguageSelector  from "./LanguageSelector";
+import GithubUser from "./GithubUser";
 
 
 export function App() {
     return (
     <div className="app">
-        <Welcome name="Pablo" age="31"/>
-
-        <InteractiveWelcome />
-
-        <Counter initialValue={0} />
-
+        <Welcome name="Pablo"/>
+        <hr></hr>
+        <div className="counterzone"><Counter initialValue={0} /></div>
+        <hr></hr>
         <div className="timediv">
             <LanguageSelector>
             <Clock />
             </LanguageSelector>
         </div>
-
+        <hr></hr>
         <Login />
-        
+        <hr></hr>
         <TodoList />
-
+        <hr></hr>
         <Container title="Hello, Click here">
             <p>BYE</p>
         </Container>
+        <hr></hr>
+        <GithubUser username={"Drakensen"} />
     </div>
     )
 }
