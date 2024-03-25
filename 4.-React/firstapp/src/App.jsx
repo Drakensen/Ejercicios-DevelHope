@@ -10,6 +10,8 @@ import TodoList  from "./TodoList";
 import { Container } from "./Container";
 import LanguageSelector  from "./LanguageSelector";
 import GithubUser from "./GithubUser";
+import { GithubUsers } from "./GithubUsers";
+
 
 
 export function App() {
@@ -33,7 +35,7 @@ export function App() {
             <p>BYE</p>
         </Container>
         <hr></hr>
-        <GithubUser username={"Drakensen"} />
+        <GithubUsers />
     </div>
     )
 }

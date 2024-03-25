@@ -15,7 +15,7 @@ function handleRemoveTodo(index) {
 }
 
 return (
-    <div>
+    <div className="todo">
     <form onSubmit={handleAddTodo}>
         <input name="todo" className="new-todo" />
         <button type="submit">Add</button>

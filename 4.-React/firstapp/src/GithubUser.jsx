@@ -15,9 +15,7 @@ export function GithubUser({ username }) {
 	}, [username]);
 
 	return (
-		<div className='gitusersearch'>
-            <input type="text" />
-            <button type='submit'>Search</button>
+		<div>
 			{user && (
 				<div className='githubuser'>
 					<img src={user.avatar_url} />
