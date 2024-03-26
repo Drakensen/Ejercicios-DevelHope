@@ -26,6 +26,7 @@ export function Login () {
 
     function handleSubmit(event) {
         event.preventDefault();
+        console.log("Logged")
     }
 
     return (
@@ -34,7 +35,7 @@ export function Login () {
             <input type="text" name="username" value={data.username} onChange={handleInputChange} />
             <input type="password" name="password" value={data.password} onChange={handleInputChange}/>
             <input type="checkbox" name="section" checked= {data.section} onChange={handleInputChange} />Remember me 
-            <button disabled={!data.username || !data.password}>Login</button>
+            <button type="submit" disabled={!data.username || !data.password}>Login</button>
             <button onClick={() => setData({ username: '', password: '', section: false })}>Reset</button>
         </form>
     )
