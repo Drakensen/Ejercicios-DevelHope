@@ -1,38 +1,35 @@
 import { useState, useEffect } from "react";
+import useCurrentLocation from "./useCurrentLocation";
 
-const BASE_URL = "https://api.github.com/users";
-
-const fetchGithubUser = async (username) => {
-    try {
-        const response = await (`${BASE_URL}/${username}`);
-        if (response.status === 200) {
-        return response.data;
-        }
-    } catch (error) {
-    throw error;
-    }
-};
-
-export default function useGithubUser(username) {
+const useGithubUser = (username) => {
     const [userData, setUserData] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const fetchUserData = async () => {
+        setLoading(true);
+        setError(null);
 
-    useEffect(() => {
-    const getUserData = async () => {
-        try {
-            setLoading(true);
-            const userData = await fetchGithubUser(username);
-            setUserData(userData);
-        } catch (error) {
-            setError(error);
-        } finally {
+        const response = await fetch(`https://api.github.com/users/${username}`);
+        const data = await response.json();
+
+        if (response.ok) {
+            setUserData(data);
             setLoading(false);
-        }
+    } else {
+        setError({
+        message: `Error: ${data.message}`,
+    });
+    setLoading(false);
+    }
+
+    return { response, data };
     };
 
-    getUserData();
+    useEffect(() => {
+        fetchUserData();
     }, [username]);
 
-    return { userData, loading, error };
-}
+    return { userData, loading, error, fetchUserData };
+};
+
+export default useGithubUser;

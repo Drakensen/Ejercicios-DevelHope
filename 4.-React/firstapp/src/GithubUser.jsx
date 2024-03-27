@@ -1,32 +1,29 @@
-import { useEffect, useState } from 'react';
+import React from "react";
+import useGithubUser from "./useGithubUser";
 
-export function GithubUser({ username }) {
-	const [user, setUser] = useState(null);
-	const [error, setError] = useState(null);
-	const [loading, setLoading] = useState(false);
-
-	useEffect(() => {
-		setLoading(true);
-		fetch(`https://api.github.com/users/${username}`)
-			.then((res) => res.json())
-			.then((json) => setUser(json))
-			.catch((error) => setError(error))
-			.finally(() => setLoading(false)); console.log({username})
-	}, [username]);
+const GithubUser = ({ username }) => {
+	const { userData, loading, error, fetchUserData } = useGithubUser(username);
+    const handleFetchUserData = () => {
+        fetchUserData();
+    };
 
 	return (
-		<div>
-			{user && (
-				<div className='githubuser'>
-					<img src={user.avatar_url} />
-					<div>{user.login}</div>
-					<div>{user.name}</div>
-				</div>
-			)}
-			{error && <div>{error.message}</div>}
-			{loading && <div>Loading...</div>}
-		</div>
+    <div className="github-user-info">
+        {userData.avatar_url && (
+            <img src={userData.avatar_url} alt={`${userData.name} avatar`} className="user-profile-photo" />
+        )}
+        {loading && <div>Loading...</div>}
+        <div>
+            <b>Name:</b> {userData.name}
+        </div>
+        <div>
+            <b>Username:</b> {userData.login}
+        </div>
+        <div>
+            <b>Location:</b> {userData.location}
+        </div>
+    </div>
 	);
-}
+};
 
 export default GithubUser
