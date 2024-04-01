@@ -9,7 +9,6 @@ import ColourList from "./ColourList"
 import TodoList  from "./TodoList";
 import { Container } from "./Container";
 import LanguageSelector  from "./LanguageSelector";
-import GithubUser from "./GithubUser";
 import { GithubUsers } from "./GithubUsers";
 
 
@@ -35,6 +34,8 @@ export function App() {
         </Container>
         <hr></hr>
         <GithubUsers />
+        <hr></hr>
+        <useCurrentLocation />
     </div>
     )
 }

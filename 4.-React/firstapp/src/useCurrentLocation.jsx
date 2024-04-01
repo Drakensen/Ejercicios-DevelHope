@@ -6,7 +6,7 @@ const useCurrentLocation = () => {
   const [error, setError] = useState(null);
 
   const getLocation = () => {
-    if ("geolocation" in navigator) {
+    if (navigator.geolocation) {
       return new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(
           (position) => {

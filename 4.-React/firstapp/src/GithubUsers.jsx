@@ -16,7 +16,7 @@ export function GithubUsers () {
         <>
         <div className='gitusersearch'>
             <input type="text" onChange={searchUser}/>
-            <button onClick={hubUsers}>Search user GitHub</button>
+            <button onClick={hubUsers}>Search GitHub User</button>
         </div>
         <ul>
             {users.map(user => {

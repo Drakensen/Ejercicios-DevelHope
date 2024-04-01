@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import useCurrentLocation from "./useCurrentLocation";
 
 const useGithubUser = (username) => {
     const [userData, setUserData] = useState({});
