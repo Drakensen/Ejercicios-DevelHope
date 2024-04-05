@@ -10,10 +10,11 @@ import TodoList  from "./TodoList";
 import { Container } from "./Container";
 import LanguageSelector  from "./LanguageSelector";
 import { GithubUsers } from "./GithubUsers";
+import {BrowserRouter as Router, Route, Switch}  from 'react-router-dom';
 
-
-export function App() {
+export default function App() {
     return (
+    <Router>
     <div className="app">
         <Welcome name="Pablo"/>
         <hr></hr>
@@ -35,9 +36,8 @@ export function App() {
         <hr></hr>
         <GithubUsers />
         <hr></hr>
-        <useCurrentLocation />
+        
     </div>
+    </Router>
     )
 }
-
-export default App
