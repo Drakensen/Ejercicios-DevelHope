@@ -17,9 +17,9 @@ interface CountryLanguages {
     languages: string[];
 }
 
-// Change the `CountryWithLanguages` type into an intersection type that uses the interfaces defined above. This should fix the type error on Line 28.
+// Change the `CountryWithLanguages` type into an intersection type that uses the interfaces defined above. This should fix the type error on Line 27.
 
-type CountryWithLanguages = any;
+type CountryWithLanguages = Country & CountryLanguages
 
 const countryA: CountryWithLanguages = {
     name: "Greece",
@@ -31,13 +31,12 @@ const countryA: CountryWithLanguages = {
 // Use the type alias syntax: type CountryWithStatistics = Type;
 // Add a type annotation with the `CountryWithStatistics` type on the variable `countryB`.
 
-type CountryWithStatistics = Type;
+type CountryWithStatistics = Country & CountryStatistics;
 
 const countryB = {
     name: "China",
     code: "CN",
     population: 1_412_600_000,
-    languages: ["Chinese"]
 };
 
 // ----
