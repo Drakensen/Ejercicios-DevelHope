@@ -2,40 +2,32 @@
  * START: Follow the instructions below.
  */
 
-// Add types to this function declaration.
+// Add the `any` type to fix the type errors in the following code.
 
-function doubleThePopulation(value: number): number {
-    return value * 2;
-}
+let currency = { name: "Indian rupee", any: "" };
 
-// Correct or remove the function calls which cause type errors.
+currency.name = "THB";
 
-doubleThePopulation(5);
+currency.name = "Baht";
 
-doubleThePopulation(6);
+// Fix the if statement in this function so the type of `value` is narrowed to `string`.
 
-doubleThePopulation(8);
-
-doubleThePopulation(0);
-
-// Alter this function so the `language2` parameter is optional.
-// Hint: Check `language2` is not `undefined` before passing it to `console.log()`.
-
-function languagesSpoken(country: string, language1: string, language2: any): void {
-    console.log(`The languages spoken in ${country} are:`);
-
-    console.log(language1);
-
-    if (language2 !== undefined){
-        console.log(language2);
+function countryNameLength(string: unknown) {
+    if (typeof string === "string") {
+        console.log(string.length);
     }
 }
 
-languagesSpoken("Colombia", "Spanish", "English");
+countryNameLength("United States of America");
 
-languagesSpoken("Greece", "Greek", "English");
+// Fix the type error we see when calling this function.
+// Hint: Replace one of the `never` types with a different type.
 
-languagesSpoken("New Zealand", "English", "Māori");
+function throwCountryError(message: string): never {
+    throw new Error(`Could not find country: ${message}`);
+}
+
+throwCountryError("Narnia");
 
 // ----
 
