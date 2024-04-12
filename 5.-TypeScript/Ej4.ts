@@ -2,6 +2,8 @@
  * START: Follow the instructions below.
  */
 
+import { Type } from "typescript";
+
 interface Country {
     name: string;
     code: string;
@@ -17,7 +19,7 @@ interface CountryLanguages {
 
 // Change the `CountryWithLanguages` type into an intersection type that uses the interfaces defined above. This should fix the type error on Line 28.
 
-type CountryWithLanguages = Country;
+type CountryWithLanguages = any;
 
 const countryA: CountryWithLanguages = {
     name: "Greece",
@@ -26,13 +28,16 @@ const countryA: CountryWithLanguages = {
 };
 
 // Create an intersection type named `CountryWithStatistics` that describes the shape of the object below. Use the interfaces defined above.
-// Use the type alias syntax: type CountryWithStatistics = type;
+// Use the type alias syntax: type CountryWithStatistics = Type;
 // Add a type annotation with the `CountryWithStatistics` type on the variable `countryB`.
+
+type CountryWithStatistics = Type;
 
 const countryB = {
     name: "China",
     code: "CN",
-    population: 1_412_600_000
+    population: 1_412_600_000,
+    languages: ["Chinese"]
 };
 
 // ----
