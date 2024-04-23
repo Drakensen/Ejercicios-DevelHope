@@ -1,3 +1,15 @@
+const figlet = require('figlet');
+
+function printFigletText(err, data) {
+    if (err) {
+    console.error("Something went wrong...");
+    console.error(err);
+    return;
+    }
+
+    console.log(data);
+}
+
 figlet.text(
     "Boo!",
     {
@@ -8,13 +20,5 @@ figlet.text(
         whitespaceBreak: true,
     },
     
-    function (err, data) {
-        if (err) {
-            console.log("Something went wrong...");
-            console.dir(err);
-            return;
-        }
-    
-        console.log(data);
-    }
+    printFigletText
 );
