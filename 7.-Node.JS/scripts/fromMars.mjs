@@ -17,20 +17,5 @@ server.listen(3000, () => {
 });
 
 /*
-StatusCode        : 200
-StatusDescription : OK
-Content           : {"location":"Mars"}
-RawContent        : HTTP/1.1 200 OK
-                    Connection: keep-alive
-                    Keep-Alive: timeout=5
-                    Content-Length: 19
-                    Content-Type: application/json
-{"location":"Mars"}
-Forms             : {}
-Headers           : {[Connection, keep-alive], [Keep-Alive, timeout=5], [Content-Length, 19], [Content-Type, application/json]...}
-Images            : {}
-InputFields       : {}
-Links             : {}
-ParsedHtml        : mshtml.HTMLDocumentClass
-RawContentLength  : 19
+ContentLength  : 19
  */
