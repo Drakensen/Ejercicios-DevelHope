@@ -7,7 +7,7 @@ const server = createServer ((request, response) => {
 
     response.setHeader("Content-Type", "application/json")
 
-    const jsonResponseBody = JSON.stringify ({ location: "Mars"})
+    const jsonResponseBody = JSON.stringify ({ location: "Mars" })
 
     response.end(jsonResponseBody)
 })
