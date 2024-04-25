@@ -1,6 +1,13 @@
 {
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "figlet": "^1.7.0"
+    "express-async-error": "^0.0.2",
+    "figlet": "^1.7.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/morgan": "^1.9.9"
   }
 }
