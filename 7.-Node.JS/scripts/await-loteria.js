@@ -26,4 +26,4 @@ async function getResults(player) {
 }
 
 getResults(player);
-//No se si está bien, va en orden y cuando pierde uno, se para la ejecución.
+//Va en orden de lista y cuando pierde uno, se para la ejecución.
