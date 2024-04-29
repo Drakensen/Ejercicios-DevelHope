@@ -52,6 +52,14 @@ app.put('/api/planets/:id', (req, res) => {
     res.status(200).json({msg: "The planet was updated"})
 })
 
+app.delete("/api/planets/:id", (req, res) => {
+    const {id} = req.params
+
+    planets = planets.filter(p => p.id !== Number(id))
+
+    res.status(200).json( { msg: "The planet was deleted" })
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`);
 });
