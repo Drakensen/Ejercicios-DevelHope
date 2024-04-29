@@ -55,9 +55,9 @@ app.put('/api/planets/:id', (req, res) => {
 app.delete("/api/planets/:id", (req, res) => {
     const {id} = req.params
 
-    planets = planets.filter(p => p.id !== Number(id))
+    planets = planets.filter((p) => p.id !== Number(id))
 
-    res.status(200).json( { msg: "The planet was deleted" })
+    res.status(200).json({ msg: "The planet was deleted" })
 })
 
 app.listen(port, () => {
