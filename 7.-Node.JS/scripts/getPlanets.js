@@ -19,11 +19,13 @@ let planets = [
         name: 'Mars',
     },
 ];
+
 app.use((0, morgan_1.default)('dev'));
 app.use(express_1.default.json());
 app.get('/api/planets', (req, res) => {
     res.status(200).json(planets);
 });
+
 app.get('/api/planets/:id', (req, res) => {
     const { id } = req.params;
     const planet = planets.find((p) => p.id === Number(id));
@@ -32,12 +34,24 @@ app.get('/api/planets/:id', (req, res) => {
     }
     res.status(200).json(planet);
 });
+
 app.post('/api/planets', (req, res) => {
     const { id, name } = req.body;
     const newPlanet = { id, name };
     planets = [...planets, newPlanet];
     res.status(201).json(newPlanet);
 });
+
+app.put('/api/planets/:id', (req, res) => {
+    const {id} = req.params
+    const {name} = req.body
+    planets = planets.map (p => p.id === Number (id) ? ({...p, name}) : p)
+
+    console.log(planets);
+
+    res.status(200).json({msg: "The planet was updated"})
+})
+
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`);
 });
