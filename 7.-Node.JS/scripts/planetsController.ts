@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
 import Joi from "joi";
+import pgPromise from "pg-promise";
+import { db } from "./getPlanets";
 
 type Planet = {
     id: number
@@ -20,13 +22,14 @@ let planets: Planets = [
 
 const result = planetSchema.validate(planets)
 
-const getAll = (req: Request, res: Response) => {
+const getAll = async (req: Request, res: Response) => {
+    const planets = await db.many(`SELECT * FROM planets`)
     res.status(200).json(planets)
 }
 
-const getOneById = (req: Request, res: Response) => {
+const getOneById = async(req: Request, res: Response) => {
     const { id } = req.params;
-    const planet = planets.find((p) => p.id === Number(id))
+    const planet = await db.one(`SELECT * FROM planets WHERE id=$1`, Number(id))
 
     if (!planet) {
         return res.status(404).json({ message: 'Planet not found' })
@@ -35,7 +38,7 @@ const getOneById = (req: Request, res: Response) => {
     res.status(200).json(planet)
 }
 
-const create = (req: Request, res: Response) => {
+const create = async(req: Request, res: Response) => {
     const { error } = planetSchema.validate(req.body)
     if (error) {
         return res.status(400).send({ message: "Invalid request body", error: error.details })
@@ -43,7 +46,7 @@ const create = (req: Request, res: Response) => {
 
     const { id, name } = req.body as Planet
     const newPlanet = { id, name }
-    planets = [...planets, newPlanet]
+    const planet = await db.one(`INSERT * FROM planets WHERE id=$1`, Number(id))
     res.status(201).json(newPlanet)
 }
 

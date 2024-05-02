@@ -1,10 +1,20 @@
 "use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteById = exports.updateById = exports.create = exports.getOneById = exports.getAll = void 0;
 const joi_1 = __importDefault(require("joi"));
+const getPlanets_1 = require("./getPlanets");
 const planetSchema = joi_1.default.object({
     id: joi_1.default.number().integer().required(),
     name: joi_1.default.string().required()
@@ -14,18 +24,19 @@ let planets = [
     { id: 2, name: 'Mars' },
 ];
 const result = planetSchema.validate(planets);
-const getAll = (req, res) => {
+const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const planets = yield getPlanets_1.db.many(`SELECT * FROM planets`);
     res.status(200).json(planets);
-};
+});
 exports.getAll = getAll;
-const getOneById = (req, res) => {
+const getOneById = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { id } = req.params;
-    const planet = planets.find((p) => p.id === Number(id));
+    const planet = yield getPlanets_1.db.one(`SELECT * FROM planets WHERE id=$1`, Number(id));
     if (!planet) {
         return res.status(404).json({ message: 'Planet not found' });
     }
     res.status(200).json(planet);
-};
+});
 exports.getOneById = getOneById;
 const create = (req, res) => {
     const { error } = planetSchema.validate(req.body);
