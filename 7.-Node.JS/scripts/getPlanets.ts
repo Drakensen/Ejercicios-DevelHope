@@ -1,15 +1,26 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
-import Joi from 'joi'
 import pgPromise from 'pg-promise'
+import multer from 'multer'
 import {
     getAll,
     getOneById,
     create,
     updateById,
-    deleteById
+    deleteById,
+    createImage
 } from "./planetsController.js"
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./uploads")
+  },
+  filename: (req, file, cb) => {
+    cb(null, file.originalname)
+  }
+})
+const upload = multer({ storage })
 
 dotenv.config()
 
@@ -33,7 +44,8 @@ const setupDB = async () => {
 
         CREATE TABLE planets (
             id SERIAL NOT NULL PRIMARY KEY,
-            name TEXT NOT NULL
+            name TEXT NOT NULL,
+            image TEXT
         )
     `)
 
@@ -47,16 +59,15 @@ setupDB()
 
 app.use(morgan('dev'))
 app.use(express.json())
+app.use("/uploads", express.static("uploads"))
+app.use("/static", express.static("static"))
 
 app.get('/api/planets', getAll)
-
 app.get('/api/planets/:id', getOneById)
-
 app.post('/api/planets', create)
-
 app.put('/api/planets/:id', updateById)
-
 app.delete("/api/planets/:id", deleteById)
+app.post("/api/planets/:id/image", upload.single("image"), createImage)
 
 app.listen(port, () => {
     console.log(`Example app listening on port http://localhost:${port}`)

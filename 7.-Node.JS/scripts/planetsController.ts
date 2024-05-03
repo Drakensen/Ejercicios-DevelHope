@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import Joi from "joi";
-import pgPromise from "pg-promise";
 import { db } from "./getPlanets";
 
 type Planet = {
@@ -71,4 +70,17 @@ const deleteById = async(req: Request, res: Response) => {
     res.status(200).json({ msg: "The planet was deleted" })
 }
 
-export { getAll, getOneById, create, updateById, deleteById }
+const createImage = async(req: Request, res: Response) => {
+    console.log(req.file)
+    const { id } = req.params
+    const fileName = req.file?.path
+
+    if (fileName) {
+        db.none(`UPDATE planets SET image=$2 WHERE id=$1`, [id, fileName])
+        res.status(201).json({ msg: "Planet image uploaded successfully." })
+    } else {
+        res.status(400).json({ msg: "Planet image failed to upload." })
+    }
+}
+
+export { getAll, getOneById, create, updateById, deleteById, createImage }
