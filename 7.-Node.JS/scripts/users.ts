@@ -29,7 +29,7 @@ const signUp = async (req: Request, res: Response) => {
         `SELECT * FROM users WHERE username=$1`, username)
 
     if (user) {
-        res.status(400).json({ msg: "Username already exists."})
+        res.status(400).json({ msg: "Username already exists." })
     } else {
         const { id } = await db.one(
             `INSERT INTO users (username, password) VALUES ($1, $2) RETURNING id`,

@@ -4,10 +4,14 @@ import passport from 'passport'
 import passportJWT from 'passport-jwt'
 import { db } from './db.js'
 
+if (!process.env.SECRET) {
+    throw new Error('SECRET environment variable is required');
+}
+
 passport.use (
     new passportJWT.Strategy(
         {
-            secretOrKey: SECRET,
+            secretOrKey: process.env.SECRET,
             jwtFromRequest: passportJWT.ExtractJwt.fromAuthHeaderAsBearerToken(),
         }, 
         async (payload, done) => {
