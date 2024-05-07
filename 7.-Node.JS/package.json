@@ -5,9 +5,10 @@
     "express-async-error": "^0.0.2",
     "figlet": "^1.7.0",
     "joi": "^17.13.0",
-    "joy": "^0.1.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
     "pg-promise": "^11.6.0"
   },
   "devDependencies": {
